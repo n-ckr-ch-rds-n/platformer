@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Platformer</title>
+</head>
+<body>
+  <script src="js/vec.js"></script>
+  <script src="js/coin.js"></script>
+  <script src="js/lava.js"></script>
+  <script src="js/level.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/state.js"></script>
+<script>
+let simpleLevelPlan = `
+......................
+..#................#..
+..#..............=.#..
+..#.........o.o....#..
+..#.@......#####...#..
+..#####............#..
+......#++++++++++++#..
+......##############..
+......................`;
+const levelChars = {
+  ".": "empty", "#": "wall", "+": "lava",
+  "@": Player, "o": Coin,
+  "=": Lava, "|": Lava, "v": Lava
+};
+let simpleLevel = new Level(simpleLevelPlan);
+console.log(`${simpleLevel.width} by ${simpleLevel.height}`);
+</script>
+
+</body>
+</html>
