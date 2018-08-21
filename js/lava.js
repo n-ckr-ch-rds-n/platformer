@@ -18,3 +18,6 @@ class Lava {
 }
 
 Lava.prototype.size = new Vec(1, 1);
+Lave.prototype.collide = function (state) {
+    return new State(state.level, state.actors, "lost");
+};
