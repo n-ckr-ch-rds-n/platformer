@@ -16,3 +16,5 @@ class Lava {
     }
   }
 }
+
+Lava.prototype.size = new Vec(1, 1);
