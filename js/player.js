@@ -1,3 +1,7 @@
+const playerXSpeed = 7;
+const gravity = 30;
+const jumpSpeed = 17;
+
 class Player {
   constructor(pos, speed) {
     this.pos = pos;
