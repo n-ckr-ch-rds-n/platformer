@@ -6,33 +6,10 @@
   <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
-  <script src="js/vec.js"></script>
-  <script src="js/coin.js"></script>
-  <script src="js/lava.js"></script>
-  <script src="js/level.js"></script>
-  <script src="js/player.js"></script>
-  <script src="js/state.js"></script>
-  <script src="js/draw.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
 <script>
-let simpleLevelPlan = `
-......................
-..#................#..
-..#..............=.#..
-..#.........o.o....#..
-..#.@......#####...#..
-..#####............#..
-......#++++++++++++#..
-......##############..
-......................`;
-const levelChars = {
-  ".": "empty", "#": "wall", "+": "lava",
-  "@": Player, "o": Coin,
-  "=": Lava, "|": Lava, "v": Lava
-};
-let simpleLevel = new Level(simpleLevelPlan);
-let display = new DOMDisplay(document.body, simpleLevel);
-display.syncState(State.start(simpleLevel));
-
+  runGame(GAME_LEVELS, DOMDisplay);
 </script>
 
 </body>
