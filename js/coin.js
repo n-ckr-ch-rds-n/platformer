@@ -1,3 +1,5 @@
+const wobbleSpeed = 8, wobbleDist = 0.07;
+
 class Coin {
   constructor(pos, basePos, wobble) {
     this.pos = pos;
@@ -20,4 +22,9 @@ Coin.prototype.collide = function (state) {
   let status = state.status;
   if (!filtered.some(a => a.type == "coin")) status = "won";
   return new State(state.level, filtered, status);
+};
+Coin.prototype.update = function (time) {
+    let wobble = this.wobble + time * wobbleSpeed;
+    let wobblePos = Math.sin(wobble) * wobbleDist;
+    return new Coin(this.basePos.plus(new Vec(0, wobblePos)), this.basePos, wobble);
 };
